@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
-using WebAPI.Repositories;
+using Repositories.EFCore;
+using WebAPI.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,8 +11,9 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddDbContext<RepositoryContext>(options => 
-    options.UseSqlServer(builder.Configuration.GetConnectionString("sqlConnection")));
+//kendi ayarladýðýmýz servis kayýt dosyasýný kayýt ediyoruz. kalabalýðý önlüyoruz.
+builder.Services.ConfigureSqlContext(builder.Configuration);
+
 
 var app = builder.Build();
 
