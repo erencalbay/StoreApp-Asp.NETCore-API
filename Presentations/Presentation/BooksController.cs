@@ -1,15 +1,18 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Entities.Models;
 using Microsoft.AspNetCore.Mvc;
-using Entities.Models;
-using Entities.Models;
-using Repositories.EFCore;
-using Repositories.Contracts;
 using Services.Contracts;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.InteropServices;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace WebAPI.Controllers
+namespace Presentations.Presentation
 {
-    [Route("api/[controller]")]
+    
     [ApiController]
+    [Route("api/books")]
     public class BooksController : ControllerBase
     {
         private readonly IServiceManager _manager;
@@ -31,7 +34,7 @@ namespace WebAPI.Controllers
             {
                 throw new Exception(ex.Message);
             }
-            
+
         }
 
         [HttpGet("{id:int}")]
@@ -54,7 +57,7 @@ namespace WebAPI.Controllers
             {
                 throw new Exception(ex.Message);
             }
-            
+
         }
 
         [HttpPost]
@@ -96,14 +99,14 @@ namespace WebAPI.Controllers
                 throw new Exception(ex.Message);
             }
 
-            
+
         }
         [HttpDelete("{id:int}")]
         public IActionResult DeleteAllBooks([FromRoute(Name = "id")] int id)
         {
             try
             {
-             
+
                 _manager.BookService.DeleteOneBook(id, false);
                 return NoContent();
 
