@@ -13,7 +13,8 @@ builder.Services.AddSwaggerGen();
 
 //kendi ayarladýðýmýz servis kayýt dosyasýný kayýt ediyoruz. kalabalýðý önlüyoruz.
 builder.Services.ConfigureSqlContext(builder.Configuration);
-
+builder.Services.ConfigureRepositoryManager();
+builder.Services.ConfigureServiceManager(); 
 
 var app = builder.Build();
 
