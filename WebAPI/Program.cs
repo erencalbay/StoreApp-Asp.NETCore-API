@@ -24,6 +24,9 @@ builder.Services.ConfigureRepositoryManager();
 builder.Services.ConfigureServiceManager(); 
 builder.Services.ConfigureLoggerService();
 
+//tek satýrla çaðrýlabildiði için doðrudan yazdýk
+builder.Services.AddAutoMapper(typeof(Program));
+
 var app = builder.Build();
 
 //for exception 
