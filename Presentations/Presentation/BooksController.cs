@@ -44,7 +44,7 @@ namespace Presentations.Presentation
             return Ok(book);
         }
 
-        [HttpPost]
+        [HttpPost]  
         public IActionResult CreateOneBook([FromBody] Book book)
         {
             if (book is null)

@@ -14,6 +14,7 @@ namespace WebAPI.Utilities.AutoMapper
             //Kaynak: BookDtoForUpdate,
             //Varış: Book,
             CreateMap<BookDtoForUpdate, Book>();
+            CreateMap<Book, BookDto>();
         }
     }
 }
