@@ -15,6 +15,7 @@ namespace WebAPI.Utilities.AutoMapper
             //Varış: Book,
             CreateMap<BookDtoForUpdate, Book>();
             CreateMap<Book, BookDto>();
+            CreateMap<BookDtoForInsertion, Book>();
         }
     }
 }

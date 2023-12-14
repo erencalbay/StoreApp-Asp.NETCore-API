@@ -45,12 +45,16 @@ namespace Presentations.Presentation
         }
 
         [HttpPost]  
-        public IActionResult CreateOneBook([FromBody] Book book)
+        public IActionResult CreateOneBook([FromBody] BookDtoForInsertion bookDto)
         {
-            if (book is null)
+            if (bookDto is null)
                 return BadRequest(); // 400 
 
-            _manager.BookService.CreateOneBook(book);
+            //validation değerlerinin düzgün gösterilmesi için gerekli. valid control
+            if(!ModelState.IsValid)
+                return UnprocessableEntity(ModelState); //422
+
+            var book = _manager.BookService.CreateOneBook(bookDto);
 
             return StatusCode(201, book);
         }
@@ -62,7 +66,12 @@ namespace Presentations.Presentation
             if (bookDto is null)
                 return BadRequest(); // 400 
 
-            _manager.BookService.UpdateOneBook(id, bookDto, true);
+            //validation değerlerinin düzgün gösterilmesi için gerekli. valid control
+            //422 ile döner valid değilse
+            if (!ModelState.IsValid)
+                return UnprocessableEntity(ModelState); //422
+
+            _manager.BookService.UpdateOneBook(id, bookDto, false);
 
             return NoContent(); //204
 
