@@ -22,9 +22,11 @@ namespace Repositories.EFCore
         //"new BookRepository" neden yaptık: IoC pratikliği
         public IBookRepository Book => _bookRepository.Value;
 
-        public void Save()
+        //TASK öncesi: public void Save()
+        public async Task SaveAsync()
         {
-            _context.SaveChanges();
+            //TASK öncesi: _context.SaveChanges();
+            await _context.SaveChangesAsync();
         }
     }
 }

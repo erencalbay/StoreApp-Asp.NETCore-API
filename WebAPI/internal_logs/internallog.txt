@@ -42,3 +42,9 @@
 2023-12-14 15:59:35.3417 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.2.7.2287. Product version: 5.2.7+a1ef7cd83b5a6a172142a6850f0ced4e759a4b3b. GlobalAssemblyCache: False
 2023-12-14 15:59:35.3529 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\msi-nb\Desktop\git\bsStoreApp\WebAPI\nlog.config
 2023-12-14 15:59:35.3529 Info Configuration initialized.
+2023-12-14 16:14:00.8675 Info AppDomain Shutting down. LogFactory closing...
+2023-12-14 16:14:00.8675 Info LogFactory has been closed.
+2023-12-15 00:10:24.4898 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2023-12-15 00:10:24.5061 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.2.7.2287. Product version: 5.2.7+a1ef7cd83b5a6a172142a6850f0ced4e759a4b3b. GlobalAssemblyCache: False
+2023-12-15 00:10:24.5061 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\msi-nb\Desktop\git\bsStoreApp\WebAPI\nlog.config
+2023-12-15 00:10:24.5281 Info Configuration initialized.

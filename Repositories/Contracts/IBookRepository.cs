@@ -9,8 +9,12 @@ namespace Repositories.Contracts
 {
     public interface IBookRepository : IRepositoryBase<Book>
     {
-        IQueryable<Book> GetAllBooks(bool trackChanges);
-        Book GetOneBookById(int id, bool trackChanges);
+        //TASK öncesi: IEnuremable<Book> GetAllBooks
+        Task<IEnumerable<Book>> GetAllBooksAsync(bool trackChanges);
+        //Task öncesi: Book GetOneBookById(int id, bool trackChanges);
+        Task<Book> GetOneBookByIdAsync(int id, bool trackChanges);
+
+        //Tracking bazlı çalışmalarda async kullanmayız. (aşağıdaki metodlar)
         void CreateOneBook(Book book);
         void UpdateOneBook(Book book);
         void DeleteOneBook(Book book);
