@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using NLog;
+using Presentations.ActionFilters;
 using Repositories.EFCore;
 using Services.Contracts;
 using WebAPI.Extensions;
@@ -19,6 +20,7 @@ builder.Services.AddControllers(config =>
 }).AddXmlDataContractSerializerFormatters() //xml içeriðine açýðýz.
   .AddApplicationPart(typeof(Presentations.AssemblyReference).Assembly);
 
+
 builder.Services.Configure<ApiBehaviorOptions>(options =>
 {
     options.SuppressModelStateInvalidFilter = true;
@@ -36,6 +38,7 @@ builder.Services.ConfigureLoggerService();
 
 //tek satýrla çaðrýlabildiði için doðrudan yazdýk
 builder.Services.AddAutoMapper(typeof(Program));
+builder.Services.ConfigureActionFilters();
 
 var app = builder.Build();
 
