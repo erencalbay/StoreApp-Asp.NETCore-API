@@ -38,7 +38,9 @@ builder.Services.ConfigureLoggerService();
 
 //tek satýrla çaðrýlabildiði için doðrudan yazdýk
 builder.Services.AddAutoMapper(typeof(Program));
+
 builder.Services.ConfigureActionFilters();
+builder.Services.ConfigureCors();
 
 var app = builder.Build();
 
@@ -59,6 +61,8 @@ if(app.Environment.IsProduction())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors("CorsPolicy");
 
 app.UseAuthorization();
 
