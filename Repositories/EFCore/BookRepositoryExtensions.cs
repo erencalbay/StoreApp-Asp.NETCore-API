@@ -2,8 +2,11 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using System.Linq.Dynamic.Core;
+using Repositories.EFCore.Extensions;
 
 namespace Repositories.EFCore
 {
@@ -26,6 +29,24 @@ namespace Repositories.EFCore
                 .Where(b => b.Title
                 .ToLower()
                 .Contains(lowerCaseterm));
+        }
+
+        //id desc yazarak idsi yüksek olandan düşüğe göre sıralayabiliriz(apiye böyle yazılmalı)
+        public static IQueryable<Book> Sort(this IQueryable<Book> books,
+            string orderByQueryString)
+        {
+            if(string.IsNullOrWhiteSpace(orderByQueryString))
+                return books.OrderBy(b => b.Id);
+
+            var orderQuery = OrderQueryBuilder
+                .CreateOrderQuery<Book>(orderByQueryString);
+
+            if (orderQuery is null)
+                return books.OrderBy(b => b.Id);
+
+            return books.OrderBy(orderQuery);
+
+
         }
     }
 }
