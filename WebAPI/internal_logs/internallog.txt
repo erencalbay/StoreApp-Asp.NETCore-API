@@ -66,3 +66,7 @@
 2023-12-21 15:03:16.3947 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.2.7.2287. Product version: 5.2.7+a1ef7cd83b5a6a172142a6850f0ced4e759a4b3b. GlobalAssemblyCache: False
 2023-12-21 15:03:16.4139 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\msi-nb\Desktop\git\bsStoreApp\WebAPI\nlog.config
 2023-12-21 15:03:16.4255 Info Configuration initialized.
+2023-12-22 15:15:34.9824 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2023-12-22 15:15:35.0130 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.2.7.2287. Product version: 5.2.7+a1ef7cd83b5a6a172142a6850f0ced4e759a4b3b. GlobalAssemblyCache: False
+2023-12-22 15:15:35.0297 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\msi-nb\Desktop\git\bsStoreApp\WebAPI\nlog.config
+2023-12-22 15:15:35.0465 Info Configuration initialized.
